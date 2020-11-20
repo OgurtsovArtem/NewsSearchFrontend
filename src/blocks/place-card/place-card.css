@@ -1,0 +1,31 @@
+@import url(./__title/place-card__title.css);
+@import url(./__text/place-card__text.css);
+@import url(./__link/place-card__link.css);
+@import url(./__image/place-card__image.css);
+@import url(./__date/place-card__date.css);
+
+.place-card{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 400px;
+  max-height: 576px;
+  background-color: var(--bg-card-color);
+  border-radius: 10px;
+  padding-bottom: 24px;
+  overflow: hidden;
+}
+.place-card:hover {
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.3);
+}
+
+@media (max-width: 768px) {
+  .place-card{
+    max-height: 420px;
+  }
+}
+@media (max-width: 550px) {
+  .place-card{
+    max-height: 440px;
+  }
+}

@@ -1,0 +1,13 @@
+.width-control {
+  width: calc(100% - 80px);
+  max-width: 1232px;
+  margin: 0 auto;
+}
+
+@media  (max-width: 600px) {
+  .width-control {
+    width: calc(100% - 32px);
+    max-width: 1232px;
+    margin: 0 auto;
+  }
+}

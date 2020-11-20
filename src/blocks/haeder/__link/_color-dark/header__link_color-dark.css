@@ -1,0 +1,21 @@
+.header__link_color-dark {
+  color: var(--link-color-dark);
+  opacity: 1;
+}
+.header__link_color-dark:hover {
+  opacity: 0.8;
+  transition: 0.15s;
+  border-bottom: 3px solid var(--link-color-dark);
+}
+
+@media  (max-width: 767px) {
+  .header__link_color-dark {
+    color: var(--link-color);
+    opacity: 0.6;
+  }
+  .header__link_color-dark:hover {
+    opacity: 1;
+    transition: 0.15s;
+    border-bottom: none;
+  }
+}

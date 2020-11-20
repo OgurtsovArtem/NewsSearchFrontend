@@ -1,0 +1,27 @@
+@import url(./_line-active-light/header__link_line-active-light.css);
+@import url(./_line-active-dark/header__link_line-active-dark.css);
+@import url(./_color-light/header__link_color-light.css);
+@import url(./_color-dark/header__link_color-dark.css);
+
+.header__link {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  margin-right: 34px;
+  height: 100%;
+  position: relative;
+}
+@media  (max-width: 767px) {
+  .header__link{
+    height: auto;
+    margin: 22px auto 20px;
+    /* opacity: 1; */
+
+  }
+  .header__link:hover {
+    /* opacity: 0.6; */
+    transition: 0.15s;
+    border-bottom: none;
+  }
+}
+

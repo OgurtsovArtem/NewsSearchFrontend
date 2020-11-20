@@ -1,0 +1,23 @@
+.author__avatar {
+  width: 464px;
+  height:  464px;
+  border-radius: 1000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit:cover;
+  margin-right: 56px;
+}
+
+@media (max-width: 1232px) {
+  .author__avatar{
+    width: 232px;
+    height:  232px;
+  }
+}
+@media (max-width: 767px) {
+  .author__avatar{
+    width: 232px;
+    height:  232px;
+    margin: 0 0 56px 0;
+  }
+}

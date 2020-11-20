@@ -1,0 +1,21 @@
+.intro__container {
+  display: flex;
+  flex-direction: column;
+  margin: 160px auto 80px;
+  max-width: 608px;
+  font-family: Roboto Slab;
+}
+
+@media  (max-width: 767px) {
+  .intro__container{
+    max-width: 452px;
+    width: calc(100% - 80px);
+    margin: 120px auto 80px;
+  }
+}
+@media  (max-width: 600px) {
+  .intro__container {
+    width: calc(100% - 40px);
+    margin: 86px auto 32px;
+  }
+}

@@ -1,0 +1,24 @@
+.footer__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__list li {
+  list-style: none;
+}
+
+.footer__list li:not(:last-child){
+  margin-right: 20px;
+}
+
+@media  (max-width: 370px) {
+  .footer__list {
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: baseline;
+    min-height: 72px;
+  }
+}

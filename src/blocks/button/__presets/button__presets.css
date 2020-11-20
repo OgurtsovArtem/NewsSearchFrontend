@@ -1,0 +1,7 @@
+.button__presets {
+  border-radius: 100px;
+  background-color: transparent;
+  color: var(--btn-text-color);
+  margin: 0;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}

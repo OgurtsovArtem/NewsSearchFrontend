@@ -1,0 +1,4 @@
+.place-list__button_color-dark {
+  color: var(--btn-text-color);
+  background-color:var(--btn-bg-color-dark);;
+}

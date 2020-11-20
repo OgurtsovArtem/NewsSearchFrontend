@@ -1,0 +1,16 @@
+.topic__container {
+  padding-top: 120px;
+  padding-bottom: 32px;
+}
+
+@media (max-width: 600px) {
+  .topic__container {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 400px) {
+  .topic__container {
+    padding-top: 60px;
+  }
+}

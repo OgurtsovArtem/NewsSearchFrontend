@@ -1,0 +1,23 @@
+.place-list__container{
+  font-family: Roboto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 400px);
+  grid-gap: 16px 16px;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 64px 0px;
+}
+
+@media (max-width: 768px) {
+  .place-list__container{
+    grid-gap: 8px 8px;
+    grid-template-columns: repeat(auto-fit, 224px);
+    padding-top: 32px;
+  }
+}
+
+@media (max-width: 550px) {
+  .place-list__container{
+    grid-template-columns: repeat(auto-fit, 288px);
+  }
+}

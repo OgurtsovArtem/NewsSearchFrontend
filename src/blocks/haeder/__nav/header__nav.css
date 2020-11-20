@@ -1,0 +1,36 @@
+.header__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  height: 100%;
+  margin: 0;
+}
+
+@media  (max-width: 767px) {
+  .header__nav{
+    visibility: hidden;
+    position: absolute;
+    height: auto;
+    width: 100%;
+    top: -800px;
+    left: 0;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: #1A1B22;
+    transition-duration: .4s;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    padding-bottom: 24px;
+    z-index: -1;
+  }
+  /* .main-page {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  } */
+}

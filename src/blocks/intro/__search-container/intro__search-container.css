@@ -1,0 +1,13 @@
+.intro__search-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+@media  (max-width: 550px) {
+  .intro__search-container{
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,15 @@
+.header__link_line-active-dark {
+  border-bottom: 3px solid var(--link-color-dark);
+  opacity: 1!important;
+}
+
+.header__link_line-active-dark:hover {
+  border-bottom: 3px solid var(--link-color-dark);
+  opacity: 0.8!important;
+}
+@media  (max-width: 767px) {
+  .header__link_line-active-dark {
+    border: none;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,16 @@
+.place-card__title {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  margin: 12px 24px 16px;
+}
+
+
+@media (max-width: 768px) {
+  .place-card__title{
+    font-size: 22px;
+    line-height: 24px;
+  }
+}

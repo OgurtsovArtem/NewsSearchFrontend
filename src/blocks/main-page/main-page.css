@@ -1,0 +1,18 @@
+.main-page{
+  position: relative;
+  margin: 0 auto;
+  max-width: 2560px;
+  min-width: 320px;
+  font-family: Roboto,Arial,sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+input:focus, input:active {
+  outline: none;
+}
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}

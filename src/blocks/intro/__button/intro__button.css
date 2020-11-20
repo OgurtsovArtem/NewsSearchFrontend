@@ -1,0 +1,39 @@
+.intro__button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 168px;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  border: 0;
+  background-color: #2F71E5;
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+  padding: 22px 0;
+  color: var(--btn-text-color);
+  border-radius: 100px;
+}
+.intro__button:hover {
+  background-color: #347EFF;
+}
+
+.intro__button:focus {
+  background-color: #2A65CC;
+  transition-duration: 1s;
+  width: 100%;
+}
+.intro__button:disabled{
+  background-color: #e6e8eb;
+  color: rgba(0,0,0,.5);
+}
+
+@media  (max-width: 550px) {
+  .intro__button {
+    position: relative;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .intro__button{
+    width: 100%;
+  }
+}

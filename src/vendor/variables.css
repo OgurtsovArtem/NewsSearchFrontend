@@ -1,0 +1,33 @@
+:root {
+  /* Primary colors */
+  --back-color:  #F5F6F7;
+
+  /* Color-light-page */
+  --border-color-dark:  #000;
+  --btn-icon-color-dark:  #000;
+  --btn-text-color-dark:  #000;
+  --btn-bg-color-dark: #000;
+  --title-color-dark:  #000;
+  --text-color-dark:   #000;
+  --link-color-dark:  #000;
+  --bg-card-color-dark:  #000;
+
+  /* Color-dark-page */
+  --border-color: #FFF;
+  --btn-icon-color: #FFF;
+  --btn-text-color: #FFF;
+  --btn-bg-color: #FFF;
+  --title-color: #FFF;
+  --text-color:  #FFF;
+  --link-color: #FFF;
+  --bg-card-color: #FFF;
+
+  /* variables */
+/*Максимальная ширина для адаптива*/
+  --width-4k: 2560px;
+  --width-desktops: 1440px;
+  --width-tablet: 768px;
+  --width-wide-phone: 425px;
+  --width-average-phone: 375px;
+  --width-small-phone: 320px;
+}

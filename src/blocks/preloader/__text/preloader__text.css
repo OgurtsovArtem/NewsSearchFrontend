@@ -1,0 +1,17 @@
+.preloader__text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #5e6264;
+}
+.preloader__text:after {
+  content: '.';
+  animation: loading 1s ease alternate infinite;
+}
+
+@keyframes loading {
+  60%  { text-shadow: 0.35em 0 0 currentColor; }
+  100% { text-shadow: 0.35em 0 0 currentColor, 0.75em 0 0 currentColor; }
+}

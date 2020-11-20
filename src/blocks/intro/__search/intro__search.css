@@ -1,0 +1,26 @@
+.intro__search {
+  width: 100%;
+  margin: 0;
+  padding-left: 24px;
+  height: 64px;
+  border-radius: 100px;
+  border: 0;
+}
+.intro__search:focus {
+  box-shadow: 0px 12px 17px rgba(59, 59, 59, 0.8);
+  transition-duration: .5s;
+  outline: none;
+}
+@media  (max-width: 550px) {
+  .intro__search{
+    padding-left: 16px;
+    margin-bottom: 16px;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .intro__search{
+    width: 100%;
+  }
+}

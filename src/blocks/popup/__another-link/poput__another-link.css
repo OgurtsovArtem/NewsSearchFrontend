@@ -1,0 +1,16 @@
+.popup__another-link {
+  display: flex;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 16px;
+  text-indent:25px
+}
+
+/* #text .popup__another-link  {
+  padding-right: 10px;
+} */

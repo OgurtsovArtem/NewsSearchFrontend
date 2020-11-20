@@ -1,0 +1,40 @@
+.button__icon_arrow {
+  position: relative;
+  margin-left: 5px;
+  top: 8px;
+  width: 12px;
+  border-top: 2px solid var(--btn-icon-color);
+  display: block;
+}
+.button__icon_arrow::after {
+  content: '';
+  position: absolute;
+  width: 11px;
+  top: -5px;
+  right: -3px;
+  border-top: 2px solid;
+  transform: rotate(40deg);
+}
+.button__icon_arrow::before {
+  content: '';
+  position: absolute;
+  width: 11px;
+  top: 1px;
+  right: -3px;
+  border-bottom: 2px solid;
+  transform: rotate(-40deg);
+}
+.button:hover .button__icon_arrow {
+  animation: arrow 1.2s linear infinite;
+}
+@keyframes arrow {
+  0% {
+      left:0;
+  }
+  50% {
+      left:10px;
+  }
+  100% {
+      left:0;
+  }
+}

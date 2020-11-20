@@ -1,0 +1,14 @@
+.author__info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+}
+
+
+@media (max-width: 550px) {
+  .author__info-container {
+    align-items: center;
+    text-align: center;
+    }
+  }

@@ -1,0 +1,8 @@
+.button_color-dark {
+  color: var(--btn-text-color-dark);
+  border-color: var(--border-color-dark);
+}
+.button_color-dark span {
+  color: var(--btn-text-color-dark);
+  border-color: var(--border-color-dark);
+}

@@ -1,0 +1,18 @@
+.place-card__text {
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 22px;
+margin: 0 24px 18px;
+overflow : hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 5;
+-webkit-box-orient: vertical;
+}
+
+@media (max-width: 768px) {
+.place-card__text {
+  -webkit-line-clamp: 4;
+  }
+}

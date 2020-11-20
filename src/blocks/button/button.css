@@ -1,0 +1,20 @@
+@import url(./__icon/button__icon.css);
+@import url(./__icon/_arrow/button__icon_arrow.css);
+@import url(./__icon/_bracket/button__icon_bracket.css);
+@import url(./__presets/button__presets.css);
+@import url(./__text/button__text.css);
+@import url(./__burger/button__burger.css);
+@import url(./_color-light/button_color-light.css);
+@import url(./_color-dark/button_color-dark.css);
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+button:active, button:focus {
+  outline: none;
+}
+
+

@@ -1,0 +1,10 @@
+.header__button {
+  color: var(--btn-text-color);
+  padding: 12px 19px;
+  border: 1px solid var(--border-color);
+  z-index: 900;
+}
+.header__button:hover {
+  opacity: .5;
+  transition: 0.3s;
+}

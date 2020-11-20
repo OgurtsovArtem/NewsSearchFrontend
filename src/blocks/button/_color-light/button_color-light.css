@@ -1,0 +1,8 @@
+.button_color-light {
+  color: var(--btn-text-color);
+  border-color: var(--border-color);
+}
+.button_color-light span {
+  color: var(--btn-text-color);
+  border-color: var(--border-color);
+}

@@ -1,0 +1,11 @@
+.footer__content {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+@media  (max-width: 720px) {
+  .footer__content {
+    justify-content: space-around;
+    flex-direction: column-reverse;
+  }
+}

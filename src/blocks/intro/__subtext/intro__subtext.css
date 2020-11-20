@@ -1,0 +1,23 @@
+.intro__subtext {
+  align-items: flex-start;
+  margin: 32px 0 64px 0;
+  max-width: 545px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--text-color);
+}
+
+@media  (max-width: 767px) {
+  .intro__subtext{
+    margin: 16px 0 48px 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .intro__subtext{
+    margin: 16px 0 122px 0;
+  }
+}

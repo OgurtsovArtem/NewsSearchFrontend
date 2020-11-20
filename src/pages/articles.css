@@ -1,0 +1,15 @@
+@import url(../blocks/haeder/header.css);
+@import url(../vendor/normalize.css);
+@import url(../blocks/main-page/main-page.css);
+@import url(../vendor/variables.css);
+@import url(../blocks/link/link.css);
+@import url(../vendor/fonts.css);
+@import url(../blocks/button/button.css);
+@import url(../blocks/place-card/place-card.css);
+@import url(../blocks/place-list/place-list.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/width-control/width-control.css);
+@import url(../blocks/disabled/disabled.css);
+@import url(../blocks/topic/topic.css);
+
+

@@ -1,0 +1,14 @@
+.header__link_line-active-light {
+  border-bottom: 3px solid var(--link-color);
+  opacity: 1!important;
+}
+
+.header__link_line-active-light:hover {
+  border-bottom: 3px solid var(--link-color);
+  opacity: 0.6!important;
+}
+@media  (max-width: 767px) {
+  .header__link_line-active-light {
+    border: none;
+  }
+}
