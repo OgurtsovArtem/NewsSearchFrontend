@@ -1,0 +1,53 @@
+@import url(./_active/place-card__flag_active.css);
+
+.place-card__flag {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  background-color: #FFF;
+  z-index: 2;
+  border-radius: 8px;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.place-card__flag::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 13px;
+  width: 14px;
+  height: 19px;
+  border: solid #1A1B22;
+  border-width: 2px 2px 0 2px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  opacity: .5;
+}
+.place-card__flag::after {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 24px;
+  width: 10px;
+  height: 10px;
+  border: solid #1A1B22;
+  border-width: 2px 0 0 2px;
+  border-bottom: 2px solid  transparent;
+  border-right: 2px solid  transparent;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+  background-color:#FFF;
+  z-index: 2;
+  opacity: .5;
+}
+.place-card__flag:hover:after {
+  opacity: 1;
+  z-index: 2;
+}
+.place-card__flag:hover:before {
+  opacity: 1;
+  z-index: 2;
+}

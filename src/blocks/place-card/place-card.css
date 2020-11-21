@@ -3,8 +3,11 @@
 @import url(./__link/place-card__link.css);
 @import url(./__image/place-card__image.css);
 @import url(./__date/place-card__date.css);
+@import url(./__flag/place-card__flag.css);
+@import url(./__prompt/place-card__prompt.css);
 
 .place-card{
+  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;

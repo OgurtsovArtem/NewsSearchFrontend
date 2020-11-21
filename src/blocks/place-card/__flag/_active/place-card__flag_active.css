@@ -1,0 +1,10 @@
+.place-card__flag_active:before {
+  border:#2F71E5 !important;
+  background-color: #2F71E5;
+  opacity: 1 !important;
+}
+.place-card__flag_active::after {
+  border:#2F71E5 !important;
+  background-color: #2F71E5;
+  opacity: 1 !important;
+}
