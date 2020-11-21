@@ -22,7 +22,7 @@
             <a class="link header__link header__link_color-light  header__link_line-active-light" href="#">Главная</a>
           </li>
           <li>
-            <a class="link header__link header__link_color-light " href="./articles.html">Сохраненные статьи</a>
+            <a class="link header__link header__link_color-light disabled" href="./articles.html">Сохраненные статьи</a>
           </li>
         </ul>
         <button type="button" class="button button__presets header__button header__button-login">Авторизоваться</button>
@@ -57,16 +57,18 @@
     <section class="not-found disabled">
       <picture>
         <source media="(max-width: 1440px)" srcset="<%=require('./images/icons/not-found_v1.svg').default%>">
-          <img src="<%=require('./images/icons/not-found_v1.svg').default%>" alt="" class="not-found__icon">
+          <img src="<%=require('./images/icons/not-found_v1.svg').default%>" alt="not-found" class="not-found__icon">
       </picture>
       <h3 class="not-found__title">Ничего не найдено</h3>
       <p class="not-found__text">К сожалению по вашему запросу ничего не найдено.</p>
     </section>
 
-    <section class="place-list width-control">
+    <section class="place-list width-control disabled">
       <h2 class="place-list__title">Результаты поиска</h2>
       <div class="place-list__container">
         <div class="place-card">
+          <button class="place-card__flag place-card__flag_active"></button>
+          <!-- <p class="place-card__prompt">Войдите, чтобы сохранять статьи</p> Не готово -->
           <img src="<%=require('./images/image_06.png').default%>" alt="" class="place-card__image">
           <span class="place-card__date">2 августа, 2019</span>
           <h3 class="place-card__title">Национальное достояние – парки</h3>
@@ -74,6 +76,7 @@
           <a href="#" class="place-card__link link">Лента.ру</a>
         </div>
         <div class="place-card">
+          <button class="place-card__flag"></button>
           <img src="<%=require('./images/image_06.png').default%>" alt="" class="place-card__image">
           <span class="place-card__date">2 августа, 2019</span>
           <h3 class="place-card__title">Национальное достояние – парки</h3>
@@ -81,6 +84,7 @@
           <a href="#" class="place-card__link link">Лента.ру</a>
         </div>
         <div class="place-card">
+          <button class="place-card__flag place-card__flag_active"></button>
           <img src="<%=require('./images/image_06.png').default%>" alt="" class="place-card__image">
           <span class="place-card__date">2 августа, 2019</span>
           <h3 class="place-card__title">Национальное достояние – парки</h3>
@@ -94,8 +98,6 @@
     <section class="author">
       <div class="author__container width-control">
         <picture>
-          <source media="(max-width: 768px)" srcset="<%=require('./images/avatar.jpg').default%>">
-          <source media="(max-width: 1232px)" srcset="<%=require('./images/avatar.jpg').default%>">
           <source media="(max-width: 1440px)" srcset="<%=require('./images/avatar.jpg').default%>">
           <img src="<%=require('./images/avatar.jpg').default%>" alt="" class="author__avatar">
         </picture>
@@ -191,5 +193,3 @@
   <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
 </html>
-
-<!--  Сделать все высоты и ширины в %  -->
