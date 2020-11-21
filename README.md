@@ -7,7 +7,9 @@
 -----------------------------------
 
 Для установки потребуется 
+
 **Node.js.** [Скачать](https://nodejs.org/en/download/),
+
 **Git Bash** [Скачать](https://git-scm.com/downloads).
 
 * Открываем **Git Bash**
