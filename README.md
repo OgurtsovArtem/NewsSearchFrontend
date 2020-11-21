@@ -6,14 +6,16 @@
 Как установить.
 -----------------------------------
 
-Для установки потребуется **Node.js.** [Скачать](https://nodejs.org/en/download/), **Git Bash** [Скачать](https://git-scm.com/downloads).
+Для установки потребуется 
+**Node.js.** [Скачать](https://nodejs.org/en/download/),
+**Git Bash** [Скачать](https://git-scm.com/downloads).
 
 * Открываем **Git Bash**
 * Переходим в нужную папку
 `$ cd /ваша_папка`
 
 * Клонируем фаилы репозитория в папку с проектом
-`$ git clone https://github.com/OgurtsovArtem/NewsSearchFrontend.git`
+ `$ git clone https://github.com/OgurtsovArtem/NewsSearchFrontend.git`
 
 * Устанавливаем все необходимое
 `$ npm install` 
