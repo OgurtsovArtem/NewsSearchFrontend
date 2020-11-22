@@ -19,7 +19,6 @@
 .intro__button:focus {
   background-color: #2A65CC;
   transition-duration: 1s;
-  width: 100%;
 }
 .intro__button:disabled{
   background-color: #e6e8eb;
