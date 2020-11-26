@@ -5,6 +5,7 @@
 }
 @media  (max-width: 720px) {
   .footer__content {
+    padding-top: 20px;
     justify-content: space-around;
     flex-direction: column-reverse;
   }
