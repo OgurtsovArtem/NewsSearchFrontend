@@ -1,15 +1,15 @@
 .popup__close {
   width: 26px;
   position: absolute;
-  top: -26px;
-  right: -26px;
+  top: -29px;
+  right: -31px;
   cursor: pointer;
 }
 
-.popup__close-image {
-  width: 26px;
-  position: relative;
-  top: -30px;
-  right: 0;
-  vertical-align: top;
+@media  (max-width: 450px) {
+  .popup__close {
+    top: -40px;
+    right: 14px;
+  }
 }
+
