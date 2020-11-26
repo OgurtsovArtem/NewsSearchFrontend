@@ -21,13 +21,4 @@
   --text-color:  #FFF;
   --link-color: #FFF;
   --bg-card-color: #FFF;
-
-  /* variables */
-/*Максимальная ширина для адаптива*/
-  --width-4k: 2560px;
-  --width-desktops: 1440px;
-  --width-tablet: 768px;
-  --width-wide-phone: 425px;
-  --width-average-phone: 375px;
-  --width-small-phone: 320px;
 }
