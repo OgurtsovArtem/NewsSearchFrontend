@@ -5,8 +5,15 @@
   margin: 0 auto;
   padding: 19px 84px;
   max-width: 288px;
+  margin-bottom: 80px;
 }
 .place-list__button:hover{
   opacity: 1;
   box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.3);
+}
+
+@media (max-width: 768px) {
+  .place-list__button {
+    margin-bottom: 40px;
+  }
 }
