@@ -14,9 +14,8 @@
 <body class="main-page">
   <header class="header header_dark">
     <div class="header__content width-control">
-      <!-- Нужно менять класс с темного на светлый при открытиии навигации у бургера, заголовка и кнопки-->
       <a href="./index.html" lang="en" class="link header__title header__title_color-dark" target="_blank">NewsExplorer</a>
-      <button class="button button__burger button_color-dark" href="#"></button>
+      <button class="button button__burger button_color-dark"></button>
       <nav class="header__nav">
         <ul class="header__list">
           <li>
@@ -28,10 +27,10 @@
         </ul>
         <button type="button" class="button button_color-dark button__presets header__button header__button-logout">
           <span class="button__text">Грета</span>
-          <div class="button__icon">
+          <span class="button__icon">
             <span class="button__icon_bracket"></span>
             <span class="button__icon_arrow"></span>
-          </div>
+          </span>
         </button>
       </nav>
     </div>
@@ -45,25 +44,33 @@
       <p class="topic__keywords">По ключевым словам: <span class="topic__keywords_bold">Природа, Тайга</span> и <span class="topic__keywords_bold">2-м другим</span></p>
       </div>
     </section>
-
     <section class="place-list width-control">
       <div class="place-list__container">
         <div class="place-card">
-          <img src="<%=require('../images/image_06.png').default%>" alt="" class="place-card__image">
+          <button class="place-card__backet"></button>
+          <p class="place-card__prompt">Убрать из сохранённых</p>
+          <p class="place-card__keyword">Природа</p>
+          <img src="<%=require('../images/image_06.png').default%>" alt="card-image" class="place-card__image">
           <span class="place-card__date">2 августа, 2019</span>
           <h3 class="place-card__title">Национальное достояние – парки</h3>
           <p class="place-card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
           <a href="#" class="place-card__link link">Лента.ру</a>
         </div>
         <div class="place-card">
-          <img src="<%=require('../images/image_06.png').default%>" alt="" class="place-card__image">
+          <button class="place-card__backet"></button>
+          <p class="place-card__prompt">Убрать из сохранённых</p>
+          <p class="place-card__keyword">Природа</p>
+          <img src="<%=require('../images/image_06.png').default%>" alt="card-image" class="place-card__image">
           <span class="place-card__date">2 августа, 2019</span>
           <h3 class="place-card__title">Национальное достояние – парки</h3>
           <p class="place-card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
           <a href="#" class="place-card__link link">Лента.ру</a>
         </div>
         <div class="place-card">
-          <img src="<%=require('../images/image_06.png').default%>" alt="" class="place-card__image">
+          <button class="place-card__backet"></button>
+          <p class="place-card__prompt">Убрать из сохранённых</p>
+          <p class="place-card__keyword">Природа</p>
+          <img src="<%=require('../images/image_06.png').default%>" alt="card-image" class="place-card__image">
           <span class="place-card__date">2 августа, 2019</span>
           <h3 class="place-card__title">Национальное достояние – парки</h3>
           <p class="place-card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система нациВ 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система нациВ 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система нациВ 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система нациВ 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система нациВ 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
@@ -71,7 +78,8 @@
         </div>
       </div>
     </section>
-
+  </main>
+  
   <footer class="footer">
     <div class="footer__content  width-control">
       <p class="footer__copyright" lang="en">© 2020 Supersite, Powered by News API</p>
@@ -96,7 +104,6 @@
         </picture>
       </a>
       </nav>
-      </div>
     </div>
   </footer>
   <script src="<%= htmlWebpackPlugin.files.js %>"></script>
