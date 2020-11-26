@@ -1,0 +1,26 @@
+@import url(./_hide/place-card__keyword_hide.css);
+
+.place-card__keyword {
+    position: absolute;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    top: 24px;
+    left: 24px;
+    z-index: 2;
+    margin: 0;
+    background-color: #FFF;
+    border-radius: 8px;
+    padding:8px 15px;
+    transition: 0.5s;
+}
+
+
+@media (max-width: 768px) and (min-width: 550px) {
+    .place-card__keyword{
+      top: 8px;
+      left: 8px;
+    }
+  }

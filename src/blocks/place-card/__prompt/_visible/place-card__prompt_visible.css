@@ -1,0 +1,10 @@
+.place-card__prompt_visible {
+    visibility: visible !important;
+    top: 24px !important;
+}
+
+@media (max-width: 768px) and (min-width: 550px) {
+    .place-card__prompt_visible {
+        right: 50px !important;
+    }
+}
