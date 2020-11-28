@@ -12,3 +12,11 @@
     width: calc(100% - 60px);
   }
 }
+
+@media  (max-width: 450px) {
+  .popup__content {
+    width: 100%;
+    transform: translateY(56px);
+    height: 100%;
+  }
+}

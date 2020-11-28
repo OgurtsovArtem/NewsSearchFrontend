@@ -5,6 +5,9 @@
 @import url(./__date/place-card__date.css);
 @import url(./__flag/place-card__flag.css);
 @import url(./__prompt/place-card__prompt.css);
+@import url(./__icons/place-card__icons.css);
+@import url(./__basket/place-card__basket.css);
+@import url(./__keyword/place-card__keyword.css);
 
 .place-card{
   position: relative;

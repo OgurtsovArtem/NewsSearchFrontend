@@ -1,6 +1,6 @@
 {
   "name": "newsfrontend",
-  "version": "1.0.0",
+  "version": "0.3.0",
   "description": "Frontend for Yandex Diploma 2020",
   "main": "index.js",
   "scripts": {

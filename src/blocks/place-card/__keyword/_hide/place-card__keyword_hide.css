@@ -1,0 +1,11 @@
+@media (max-width: 768px){
+    .place-card__keyword_hide {
+        left: -200px !important;;
+    }
+  }
+
+    @media (max-width: 550px){
+        .place-card__keyword_hide {
+            top: -1000px !important;;
+        }
+    }
