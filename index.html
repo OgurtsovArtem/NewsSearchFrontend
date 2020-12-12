@@ -1,102 +1,178 @@
-Html Webpack Plugin:
-<pre>
-  Error: html-webpack-plugin could not minify the generated output.
-  In production mode the html minifcation is enabled by default.
-  If you are not generating a valid html output please disable it manually.
-  You can do so by adding the following setting to your HtmlWebpackPlugin config:
-  |
-  |    minify: false
-  |
-  See https://github.com/jantimon/html-webpack-plugin#options for details.
-  For parser dedicated bugs please create an issue here:
-  https://danielruf.github.io/html-minifier-terser/
-  Parse Error: <input type="password" name="password" id='password-login' class="popup__input popup__input_type_link-url  " placeholder="Введите пароль" " required> 
-              <div class="error popup__error" id ='password-login-error'></div> 
-              <button type="button" class="button button__presets popup__button button__login" >Войти</button> 
-              <p class="popup__another-link">или&nbsp;<button type="button" class="button popup__button-another-form">За  регистрироваться</button></p> 
-            </fieldset> 
-          </form> 
-        </div> 
-      </section> 
-      <section class="popup popup-registration disabled"> 
-        <div class="popup__content"> 
-          <img src="./src/images/close.svg" alt="close-image" class="popup__close"> 
-          <form class="popup__form" name="registration"> 
-            <fieldset> 
-              <legend class="popup__title">Регистрация</legend> 
-              <label for="email-registration" class="popup__label">Email</label> 
-              <input  type="email" id='email-registration' name="Email" class="popup__input popup__input_type_name" plac  eholder="Введите почту" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required> 
-              <div class="error popup__error" id ='email-registration-error' ></div> 
-              <label for="password-registration" class="popup__label">Пароль</label> 
-              <input type="password" name="password" id='password-registration' class="popup__input popup__input_type_li  nk-url" placeholder="Введите пароль" minlength="8" required> 
-              <div class="error popup__error" id ='password-registration-error'></div> 
-              <label for="name-registration" class="popup__label">Имя</label> 
-              <input type="text" name="name" id='name-registration' class="popup__input popup__input_type_link-url" plac  eholder="Введите своё имя"minlength="2" maxlength="30" required> 
-              <div class="error popup__error" id ='name-registration-error'></div> 
-              <button type="button" class="button button__presets popup__button button__registration" >Зарегистрироватьс  я</button> 
-              <div class="popup__another-link">или&nbsp;<button type="button" class="button popup__button-another-form">  Войти</button></div> 
-            </fieldset> 
-          </form> 
-        </div> 
-      </section> 
-      <section class="popup popup-successful disabled"> 
-        <div class="popup__content"> 
-          <img src="./src/images/close.svg" alt="close-image" class="popup__close"> 
-          <form class="popup__form" name="successful-registration"> 
-            <fieldset> 
-              <legend class="popup__title">Пользователь успешно зарегистрирован!</legend> 
-              <button type="button" class="button popup__button-another-form">Войти</button> 
-            </fieldset> 
-          </form> 
-        </div> 
-      </section> 
-    </main> 
-    <footer class="footer"> 
-      <div class="footer__content  width-control"> 
-        <p class="footer__copyright" lang="en">© 2020 Supersite, Powered by News API</p> 
-        <nav class="footer__nav"> 
-          <ul class="footer__list"> 
-            <li> 
-              <a href="./index.html" class="footer__link link">Главная</a> 
-            </li> 
-            <li> 
-              <a href="https://praktikum.yandex.ru/interface-designer" class="footer__link link" target="_blank">Яндекс   практикум</a> 
-            </li> 
-          </ul> 
-          <a href="https://github.com/" target="_blank" class="footer__social link"> 
-            <img src="./src/images/git.svg" alt="git-logo" width="20" height="20"> 
-        </a> 
-        <a href="https://vk.com" target="_blank" class="footer__social link"> 
-          <picture> 
-            <source media="(max-width: 768px)" srcset="./src/images/vk.svg"> 
-            <source media="(max-width: 1232px)" srcset="./src/images/vk-circle.svg"> 
-            <source media="(max-width: 1440px)" srcset="./src/images/vk.svg"> 
-            <img src="./src/images/vk.svg" alt="vk-logo" width="20" height="20"> 
-          </picture> 
-        </a> 
-        </nav> 
-      </div> 
-    </footer> 
-    <script src="main/main.d41d8cd98f00b204e980.js"></script> 
-  </body> 
-  </html>
-  
-  - htmlparser.js:244 new HTMLParser
-    [NewsSearchFrontend]/[html-minifier-terser]/src/htmlparser.js:244:13
-  
-  - htmlminifier.js:993 minify
-    [NewsSearchFrontend]/[html-minifier-terser]/src/htmlminifier.js:993:3
-  
-  - htmlminifier.js:1354 Object.exports.minify
-    [NewsSearchFrontend]/[html-minifier-terser]/src/htmlminifier.js:1354:16
-  
-  - index.js:1013 HtmlWebpackPlugin.minifyHtml
-    [NewsSearchFrontend]/[html-webpack-plugin]/index.js:1013:46
-  
-  - index.js:429 HtmlWebpackPlugin.postProcessHtml
-    [NewsSearchFrontend]/[html-webpack-plugin]/index.js:429:40
-  
-  - index.js:254 
-    [NewsSearchFrontend]/[html-webpack-plugin]/index.js:254:25
-  
-</pre>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name='description' content="Site for searching news">
+  <meta name='keywords' content="News, Searching, articles">
+  <meta name="author" content="Артем Огурцов">
+  <title>NewsExplorer</title>
+  <link rel="icon" href="./src/images/Favikon.svg">
+  <link rel="stylesheet" href="main/main.2fc03c7a3c32950f3b5a.css">
+</head>
+<body class="main-page">
+  <header class="header header_light">
+    <div class="header__content width-control">
+      <a href="./index.html" lang="en" class="link header__title header__title_color-light" target="_blank">NewsExplorer</a>
+      <button class="button button__burger button_color-light"></button>
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li>
+            <a class="link header__link header__link_color-light  header__link_line-active-light" href="#">Главная</a>
+          </li>
+          <li>
+            <a class="link header__link header__link_color-light" href="./articles.html">Сохраненные статьи</a>
+          </li>
+        </ul>
+        <button type="button" class="button button__presets header__button header__button-login">Авторизоваться</button>
+        <button type="button" class="button button_color-light button__presets header__button header__button-logout disabled">
+          <span class="button__text">Грета</span>
+          <span class="button__icon">
+            <span class="button__icon_bracket"></span>
+            <span class="button__icon_arrow"></span>
+          </span>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main class="content">
+
+    <section class="intro">
+      <div class="intro__container ">
+        <h1 class="intro__title">Что творится в мире?</h1>
+        <p class="intro__subtext">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
+        <form class="intro__search-container" name="search">
+          <input inputmode='search' type="search" id="search" class="intro__search" minlength="2" maxlength="45" aria-label="Search News" placeholder="Введите тему новости" required> 
+          <button  class="button intro__button" >Искать</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="preloader disabled">
+      <i class="preloader__circle"></i>
+      <h4 class="preloader__text">Идет поиск новостей</h4>
+    </section>
+
+    <section class="not-found disabled">
+      <picture>
+        <source media="(max-width: 1440px)" srcset="./src/images/not-found_v1.svg">
+          <img src="./src/images/not-found_v1.svg" alt="not-found" class="not-found__icon">
+      </picture>
+      <h3 class="not-found__title">Ничего не найдено</h3>
+      <p class="not-found__text">К сожалению по вашему запросу ничего не найдено.</p>
+    </section>
+
+    <section class="place-list width-control">
+      <h2 class="place-list__title">Результаты поиска</h2>
+      <div class="place-list__container">
+        <div class="place-card">
+          <button class="place-card__flag place-card__flag_active"></button>
+          <p class="place-card__prompt">Войдите, чтобы сохранять статьи</p>
+          <img src="./src/images/image_06.png" alt="card-image" class="place-card__image">
+          <span class="place-card__date">2 августа, 2019</span>
+          <h3 class="place-card__title">Национальное достояние – парки</h3>
+          <p class="place-card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+          <a href="#" class="place-card__link link">Лента.ру</a>
+        </div>
+      </div>
+      <button class="button button__presets place-list__button place-list__button_color-light">Показать еще</button>
+    </section>
+
+    <section class="author">
+      <div class="author__container width-control">
+        <picture>
+          <source media="(max-width: 1440px)" srcset="./src/images/avatar.jpg">
+          <img src="./src/images/avatar.jpg" alt="avatar" class="author__avatar">
+        </picture>
+        <div class="author__info-container">
+          <h3 class="author__title">Об авторе</h3>
+          <p class="author__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+          <p class="author__text"> Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="popup popup-login disabled">
+      <div class="popup__content">
+        <img src="./src/images/close.svg" alt="close-image" class="popup__close">
+        <form class="popup__form" name="login">
+          <fieldset>
+            <legend class="popup__title">Вход</legend>
+            <label for="email-login" class="popup__label">Email</label>
+            <input  type="email" id='email-login' name="email" class="popup__input popup__input_type_name" placeholder="Введите почту" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+            <div class="error popup__error" id ='email-login-error' ></div>
+            <label for="password-login" class="popup__label">Пароль</label>
+            <input type="password" name="password" id='password-login' class="popup__input popup__input_type_link-url" placeholder="Введите пароль" " required>
+            <div class="error popup__error" id ='password-login-error'></div>
+            <button type="submit" class="button button__presets popup__button button__login" >Войти</button>
+            <p class="popup__another-link">или&nbsp;<button type="button" class="button popup__button-another-form">Зарегистрироваться</button></p>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
+    <section class="popup popup-registration disabled">
+      <div class="popup__content">
+        <img src="./src/images/close.svg" alt="close-image" class="popup__close">
+        <form class="popup__form" name="registration">
+          <fieldset>
+            <legend class="popup__title">Регистрация</legend>
+            <label for="email-registration" class="popup__label">Email</label>
+            <input  type="email" id='email-registration' name="email" class="popup__input popup__input_type_name" placeholder="Введите почту" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+            <div class="error popup__error" id ='email-registration-error' ></div>
+            <label for="password-registration" class="popup__label">Пароль</label>
+            <input type="password" name="password" id='password-registration' class="popup__input popup__input_type_link-url" placeholder="Введите пароль" minlength="8" required>
+            <div class="error popup__error" id ='password-registration-error'></div>
+            <label for="name-registration" class="popup__label">Имя</label>
+            <input type="text" name="name" id='name-registration' class="popup__input popup__input_type_link-url" placeholder="Введите своё имя"minlength="2" maxlength="30" required>
+            <div class="error popup__error" id ='name-registration-error'></div>
+            <button type="submit" class="button button__presets popup__button button__registration" >Зарегистрироваться</button>
+            <div class="popup__another-link">или&nbsp;<button type="button" class="button popup__button-another-form">Войти</button></div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
+    <section class="popup popup-successful disabled">
+      <div class="popup__content">
+        <img src="./src/images/close.svg" alt="close-image" class="popup__close">
+        <form class="popup__form" name="successful-registration">
+          <fieldset>
+            <legend class="popup__title">Пользователь успешно зарегистрирован!</legend>
+            <button type="button" class="button popup__button-another-form">Войти</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__content  width-control">
+      <p class="footer__copyright" lang="en">© 2020 Supersite, Powered by News API</p>
+      <nav class="footer__nav">
+        <ul class="footer__list">
+          <li>
+            <a href="./index.html" class="footer__link link">Главная</a>
+          </li>
+          <li>
+            <a href="https://praktikum.yandex.ru/interface-designer" class="footer__link link" target="_blank">Яндекс практикум</a>
+          </li>
+        </ul>
+        <a href="https://github.com/" target="_blank" class="footer__social link">
+          <img src="./src/images/git.svg" alt="git-logo" width="20" height="20">
+      </a>
+      <a href="https://vk.com" target="_blank" class="footer__social link">
+        <picture>
+          <source media="(max-width: 768px)" srcset="./src/images/vk.svg">
+          <source media="(max-width: 1232px)" srcset="./src/images/vk-circle.svg">
+          <source media="(max-width: 1440px)" srcset="./src/images/vk.svg">
+          <img src="./src/images/vk.svg" alt="vk-logo" width="20" height="20">
+        </picture>
+      </a>
+      </nav>
+    </div>
+  </footer>
+  <script src="main/main.d41d8cd98f00b204e980.js"></script>
+</body>
+</html>
