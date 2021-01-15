@@ -12,8 +12,8 @@
 .place-card{
   position: relative;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: space-between;
   max-width: 400px;
   max-height: 576px;
   background-color: var(--bg-card-color);

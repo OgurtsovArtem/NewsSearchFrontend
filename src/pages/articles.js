@@ -1,35 +1,70 @@
 import './articles.css';
 
-const buttonBurger = document.querySelector('.button__burger');
-const headerNav = document.querySelector('.header__nav');
+import LocalStorage from '../js/components/LocalStorage'
 
-const headerTitle = document.querySelector('.header__title');
-const headerButton = document.querySelector('.header__button');
-
-const backet = document.querySelectorAll('.place-card__backet');
-const promt = document.querySelector('.place-card__prompt');
-const keyword = document.querySelector('.place-card__keyword');
+const localStorage = new LocalStorage()
 
 
-buttonBurger.addEventListener('click', () => {
-  buttonBurger.classList.toggle('active');
-  buttonBurger.classList.toggle('button_color-dark')
-  buttonBurger.classList.toggle('button_color-light')
-  headerTitle.classList.toggle('header__title_color-dark')
-  headerTitle.classList.toggle('header__title_color-light')
-  headerButton.classList.toggle('button_color-dark');
-  headerButton.classList.toggle('button_color-light');
-  headerNav.classList.toggle('header__nav_open');
-});
+import HEADER_SETTINGS from '../js/constants/HeaderSettings'
+import Header from '../js/components/Header'
+
+const header = new Header(HEADER_SETTINGS, localStorage)
+header.headerListener()
+header.accessСheck()
+
+import MAIN_API_SETTINGS from '../js/constants/mainApiSettings';
+import MainApi from '../js/api/MainApi';
+
+const mainApi = new MainApi(MAIN_API_SETTINGS, localStorage)
+console.log(mainApi.getArticles())
+// mainApi.getArticles()
+// .then((result) => {
+//   if(result.totalResults === 0){
+//       this.searchError.classList.remove('disabled');
+//   } else{
+//       this.section.classList.remove('disabled');
+//       this.searchError.classList.add('disabled');
+//       this.cardList.refreshCardList(); //очищаем предыдущий массив
+//       this.cardList.arrayControl(result.articles); // передаем текущий 
+//       this.cardList.showСards(event); // отрисовываем начальные карточки
+//   }
+
+import CARD_LIST_SETTINGS from '../js/constants/CardListSettings';
+import CardList from '../js/components/CardList'
+
+const cardList = new CardList(CARD_LIST_SETTINGS, mainApi);
 
 
-[].forEach.call(backet,function(el){
-  el.addEventListener('mouseout', function () {
-    promt.classList.remove('place-card__prompt_visible')
-    keyword.classList.remove('place-card__keyword_hide')
-  })
-  el.addEventListener('mouseover', function () {
-    promt.classList.add('place-card__prompt_visible')
-    keyword.classList.add('place-card__keyword_hide')
-  })
-});
+// const buttonBurger = document.querySelector('.button__burger');
+// const headerNav = document.querySelector('.header__nav');
+
+// const headerTitle = document.querySelector('.header__title');
+// const headerButton = document.querySelector('.header__button');
+
+// const backet = document.querySelectorAll('.place-card__backet');
+// const promt = document.querySelector('.place-card__prompt');
+// const keyword = document.querySelector('.place-card__keyword');
+
+
+// buttonBurger.addEventListener('click', () => {
+//   buttonBurger.classList.toggle('active');
+//   buttonBurger.classList.toggle('button_color-dark')
+//   buttonBurger.classList.toggle('button_color-light')
+//   headerTitle.classList.toggle('header__title_color-dark')
+//   headerTitle.classList.toggle('header__title_color-light')
+//   headerButton.classList.toggle('button_color-dark');
+//   headerButton.classList.toggle('button_color-light');
+//   headerNav.classList.toggle('header__nav_open');
+// });
+
+
+// [].forEach.call(backet,function(el){
+//   el.addEventListener('mouseout', function () {
+//     promt.classList.remove('place-card__prompt_visible')
+//     keyword.classList.remove('place-card__keyword_hide')
+//   })
+//   el.addEventListener('mouseover', function () {
+//     promt.classList.add('place-card__prompt_visible')
+//     keyword.classList.add('place-card__keyword_hide')
+//   })
+// });
