@@ -16,23 +16,17 @@ import MAIN_API_SETTINGS from '../js/constants/mainApiSettings';
 import MainApi from '../js/api/MainApi';
 
 const mainApi = new MainApi(MAIN_API_SETTINGS, localStorage)
-console.log(mainApi.getArticles())
-// mainApi.getArticles()
-// .then((result) => {
-//   if(result.totalResults === 0){
-//       this.searchError.classList.remove('disabled');
-//   } else{
-//       this.section.classList.remove('disabled');
-//       this.searchError.classList.add('disabled');
-//       this.cardList.refreshCardList(); //очищаем предыдущий массив
-//       this.cardList.arrayControl(result.articles); // передаем текущий 
-//       this.cardList.showСards(event); // отрисовываем начальные карточки
-//   }
+
 
 import CARD_LIST_SETTINGS from '../js/constants/CardListSettings';
 import CardList from '../js/components/CardList'
 
 const cardList = new CardList(CARD_LIST_SETTINGS, mainApi);
+
+import PAGE_SETTINGS from '../js/constants/PageSettings'
+import Page from '../js/components/Page'
+const page = new Page(PAGE_SETTINGS, mainApi, localStorage, cardList)
+page.accessСheck()
 
 
 // const buttonBurger = document.querySelector('.button__burger');

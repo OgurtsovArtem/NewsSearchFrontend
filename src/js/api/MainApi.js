@@ -118,12 +118,12 @@ export default class MainApi {
             return Promise.reject(`Ошибка: ${res.status}`);
         })
         .catch(err => {
-          console.log(err.massage)
+          console.log(err)
         })
 
     }
     deleteArticles(id) {
-      return fetch(`${this.options.baseUrl}/cards/${id}`, {
+      return fetch(`${this.options.baseUrl}/articles/${id}`, {
         method: 'DELETE',
         credentials: 'include',
         headers: {

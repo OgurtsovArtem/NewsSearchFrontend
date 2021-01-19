@@ -1,11 +1,9 @@
 export default class Card {
   constructor(api) {
     this.api = api;
-    console.log(this.api)
-    // this.listener =this.listener.bind(this)
   }
 
-  create( title, description, publishedAt, urlToImage, sourceName, sourceLink, _id) {
+  create( title, description, publishedAt, urlToImage, sourceName, sourceLink, keyword,cardControlKey = undefined,  id) {
 
     const placeCard = document.createElement('div');
     const cardFlag = document.createElement('button');
@@ -15,7 +13,12 @@ export default class Card {
     const cardTitle = document.createElement('h3');
     const cardText = document.createElement('p')
     const cardlink = document.createElement('a');
-
+    // Redrawing
+    const cardBucket = document.createElement('button')
+    cardBucket.classList.add('place-card__backet');
+    const cardKeyword = document.createElement('p');
+    cardKeyword.classList.add('place-card__keyword');
+    //
     placeCard.classList.add('place-card');
     cardFlag.classList.add('place-card__flag');
     cardPrompt.classList.add('place-card__prompt');
@@ -36,7 +39,6 @@ export default class Card {
     cardTitle.textContent = title;
     cardText.textContent = description;
     cardlink.textContent = sourceName;
-    placeCard.dataset.id = _id
 
     placeCard.appendChild(cardFlag);
     placeCard.appendChild(cardPrompt);
@@ -45,6 +47,20 @@ export default class Card {
     placeCard.appendChild(cardTitle);
     placeCard.appendChild(cardText);
     placeCard.appendChild(cardlink);
+
+
+   if(cardControlKey === 'Redrawing'){
+      cardPrompt.textContent = `Убрать из сохранённых`;
+      placeCard.appendChild(cardBucket);
+      placeCard.appendChild(cardKeyword);
+      cardKeyword.textContent = keyword; 
+      placeCard.removeChild(cardFlag);
+      placeCard.dataset.id = id;
+      this.cardBucket = cardBucket;
+      this.cardControlKey = cardControlKey
+      this.bucketListener()
+   }
+
 
     this.cardFlag = cardFlag;
     this.cardPrompt = cardPrompt;
@@ -57,6 +73,7 @@ export default class Card {
     this.cardImage = cardImage;
 
     this.accessСheck();
+    this.placeCard = placeCard
     return placeCard;
   }
 
@@ -65,7 +82,20 @@ export default class Card {
   }
 
   deleteCard () {
-    console.log('Пока')
+    this.api.deleteArticles(this.placeCard.dataset.id)
+    .then(res => {
+      if (res.ok){
+        console.log("удалилась")
+        this.cardFlag.classList.remove('place-card__flag_active')
+        this.removelistener()
+        if(this.cardControlKey === 'Redrawing'){
+          this.placeCard.remove()
+        }
+      }
+    })
+    .catch(err => {
+      console.log(err)
+    })
   }
 
   accessСheck(){
@@ -76,9 +106,10 @@ export default class Card {
     } return
   }
   saveCard () {
-    console.log('Привет')
+    console.log(localStorage.getItem('articleKey'))
+    
     this.api.postArticles(
-      'Power Point',
+      JSON.parse(localStorage.getItem('articleKey')),
       this.cardTitle.textContent,
       this.cardText.textContent,
       this.cardDate.textContent,
@@ -87,35 +118,54 @@ export default class Card {
       this.cardImage.src,
      )
      .then(res => {
-        console.log(res)
+       if(res !== undefined){
+        console.log('Сохранилась')
+        // localStorage.setItem('cardKey', JSON.stringify(res.id)) Это надо чтобы при перезагрузке красить уже имеющиеся
+        this.placeCard.dataset.id = res.id
+        console.log(this.placeCard.dataset.id)
+        this.cardFlag.classList.add('place-card__flag_active')
+        // записываем карту в хранилище.
+        // прогоняем по картам и присваиваем id 
+       }else {
+        this.cardPrompt.textContent = `Не могу сохранить:(`;
+        this.cardPrompt.classList.toggle('place-card__prompt_visible')
+       }
       })
     .catch(err => {
       console.log(err)
     })
-
-    // keyword: keyword,
-    // title: title,
-    // text: text,
-    // date: date,
-    // source: source,
-    // link: link,
-    // image: image,
   }
   flagControl(){
     if (this.cardFlag.classList.contains('place-card__flag_active')){
-      this.cardFlag.classList.remove('place-card__flag_active')
-      this.deleteCard()
+        this.deleteCard()
     }else {
-      this.cardFlag.classList.add('place-card__flag_active')
-      this.saveCard()
+        this.saveCard()
     }
   }
-
+  removelistener(){
+    if (this.cardControlKey === 'Redrawing'){
+      this.cardBucket.removeEventListener('mouseout',  this.promt.bind(this));
+      this.cardBucket.removeEventListener('mouseover',  this.promt.bind(this));
+      this.cardBucket.removeEventListener('click',  this.deleteCard.bind(this));
+      console.log('я удалил слушатель')
+    }else {
+      this.cardFlag.removeEventListener('mouseout',  this.promt.bind(this));
+      this.cardFlag.removeEventListener('mouseover',  this.promt.bind(this));
+      this.cardFlag.removeEventListener('click',  this.flagControl.bind(this));
+      console.log('Я удалил слшуатель с флага')
+    }
+  }
   promtListener() {
     this.cardFlag.addEventListener('mouseout',  this.promt.bind(this));
     this.cardFlag.addEventListener('mouseover',  this.promt.bind(this));
   }
   loginListener(){
     this.cardFlag.addEventListener('click',  this.flagControl.bind(this));
+
+  }
+  bucketListener(){
+    this.cardBucket.addEventListener('mouseout',  this.promt.bind(this));
+    this.cardBucket.addEventListener('mouseover',  this.promt.bind(this));
+    this.cardBucket.addEventListener('click',  this.deleteCard.bind(this));
   }
 }

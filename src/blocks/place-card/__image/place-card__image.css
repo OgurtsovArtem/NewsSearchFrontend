@@ -1,7 +1,7 @@
 .place-card__image {
   display: block;
   width: 100%;
-  min-height: 272px;
+  height: 272px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,13 +11,13 @@
 
 @media (max-width: 768px) {
   .place-card__image {
-    min-height: 150px;
+    height: 150px;
   }
 }
 
 @media (max-width: 400px) {
   .place-card__image {
-    min-height: 196px;
+    height: 196px;
   }
 }
 

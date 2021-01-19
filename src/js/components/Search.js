@@ -13,6 +13,7 @@ export default class Search {
         event.preventDefault();
         this.open()
         const key = document.forms.search.elements.search.value;
+
         this.newsApi.getNews(key, this.setTimeAgo)
         .then((result) => {
             if(result.totalResults === 0){
@@ -21,6 +22,7 @@ export default class Search {
                 this.section.classList.remove('disabled');
                 this.searchError.classList.add('disabled');
                 this.cardList.refreshCardList(); //очищаем предыдущий массив
+                localStorage.setItem('articleKey', JSON.stringify(key)); //Сохранили значение ключа
                 this.cardList.arrayControl(result.articles); // передаем текущий 
                 this.cardList.showСards(event); // отрисовываем начальные карточки
             }
