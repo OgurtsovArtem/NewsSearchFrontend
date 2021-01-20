@@ -6,7 +6,6 @@ export default class MainApi {
 
 
     login(email, password){
-      console.log(`${this.options.baseUrl}/signin`)
         return fetch(`${this.options.baseUrl}/signin`, {
             method: 'POST',
             credentials: 'include',
@@ -59,7 +58,6 @@ export default class MainApi {
           })
     }
     getUser(token){
-      console.log(token)
       return fetch(`${this.options.baseUrl}/users/me`, {
             method: 'GET',
             credentials: 'include',
