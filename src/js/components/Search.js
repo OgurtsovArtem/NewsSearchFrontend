@@ -24,7 +24,6 @@ export default class Search {
                 this.cardList.refreshCardList(); //очищаем предыдущий массив
                 localStorage.setItem('articleKey', JSON.stringify(key)); //Сохранили значение ключа
                 this.cardList.arrayControl(result.articles); // передаем текущий 
-                this.cardList.showСards(event); // отрисовываем начальные карточки
             }
         })
         .catch((err) => {

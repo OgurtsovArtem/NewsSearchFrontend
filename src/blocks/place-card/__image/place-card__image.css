@@ -11,13 +11,13 @@
 
 @media (max-width: 768px) {
   .place-card__image {
-    height: 150px;
+    height: 190px;
   }
 }
 
 @media (max-width: 400px) {
   .place-card__image {
-    height: 196px;
+    height: 200px;
   }
 }
 

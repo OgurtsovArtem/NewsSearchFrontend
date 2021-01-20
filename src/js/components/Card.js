@@ -3,8 +3,8 @@ export default class Card {
     this.api = api;
   }
 
-  create( title, description, publishedAt, urlToImage, sourceName, sourceLink, keyword,cardControlKey = undefined,  id) {
-
+  create( title, description, publishedAt, urlToImage, sourceName, sourceLink, id, keyword, cardControlKey = undefined,) {
+    
     const placeCard = document.createElement('div');
     const cardFlag = document.createElement('button');
     const cardPrompt = document.createElement('p');
@@ -61,6 +61,10 @@ export default class Card {
       this.bucketListener()
    }
 
+   if(id !== undefined){
+    placeCard.dataset.id = id;
+    cardFlag.classList.add('place-card__flag_active')
+  }
 
     this.cardFlag = cardFlag;
     this.cardPrompt = cardPrompt;

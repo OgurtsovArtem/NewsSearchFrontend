@@ -4,12 +4,9 @@ export default class Page {
       this.localStorage = localStorage;
       this.mainApi = mainApi;
       this.options = options;
-      // console.log(this.options.title)
-      // this.topicControl = this.topicControl.bind(this)
-   
     }
+
     accessСheck(){
-      // Переделать отрисовку при 0 карточек
         if (localStorage.authorizedUser !== undefined) {
           console.log('я нашел топик!')
             this.savedCard()
@@ -19,8 +16,10 @@ export default class Page {
           window.location.href="../index.html"
         }
     }
+
     //Корректирует описание класса topic
     topicControl(arrLenght , keyword){
+      console.log(keyword)
       this.options.title.textContent = 
       `
       ${this.localStorage.getKey("authorizedUser")}, у вас 
@@ -29,18 +28,17 @@ export default class Page {
       `;
       this.options.keywords.textContent = `${keyword[0]}, ${keyword[1]}`
 
-      if (arrLenght > 2){
+      if (arrLenght > 2 && keyword.length > 2){
         this.options.keynumber.textContent = 
         `
-        ${arrLenght - 2}-${this.options.declOfNum(arrLenght - 2,['му', 'м', 'и'])}
-        ${this.options.declOfNum(arrLenght - 2,['другому', 'другим', 'другим'])}
+        ${keyword.length - 2}-${this.options.declOfNum(keyword.length - 2,['му', 'м', 'и'])}
+        ${this.options.declOfNum(keyword.length - 2,['другому', 'другим', 'другим'])}
         `;
-      }else if (arrLenght < 2 && arrLenght !== 0 ){
+      }else if (keyword.length < 2 && arrLenght !== 0 ){
         this.options.keywords.textContent = `${keyword[0]}`;
         this.options.keynumber.textContent = ``;
         this.options.union.textContent =``;
       }else if (arrLenght == 0) {
-        console.log('я отработал')
         this.options.title.textContent = `${this.localStorage.getKey("authorizedUser")}, у вас нет сохранённых статей`;
         this.options.topicKeywords.classList.add('disabled')
       } else {
@@ -48,6 +46,7 @@ export default class Page {
         this.options.keynumber.textContent = `${keyword[1]}`;
       } 
     }
+    
     savedCard(){
       this.mainApi.getArticles()
       .then((result) => {
@@ -63,11 +62,14 @@ export default class Page {
             reducer[article.keyword]++;
             return reducer
           }, [])
-          // Отсортировали наиболее встречающиеся и передали 2 первых
-          const keySorted = Object.keys(reduceCard).sort(function(a,b){return reduceCard[b]-reduceCard[a]}).slice(0,2)
+          // Отсортировали наиболее встречающиеся и передали в topicControl
+          const keySorted = Object.keys(reduceCard).sort(function(a,b){return reduceCard[b]-reduceCard[a]})
           this.topicControl(result.data.length, keySorted) 
           this.cardList.renderPrivateCard(result.data.reverse())
         }
+      })
+      .catch(err => {
+        console.log(err)
       })
   }
 }

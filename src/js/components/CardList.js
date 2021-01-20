@@ -31,8 +31,7 @@ export default class CardList  {
   }
 
   render(cardArr) {
-    this.cardArr = cardArr;
-    this.cardArr.forEach((obj) => {
+    cardArr.forEach((obj) => {
       this.addCard(
         obj.title,
         obj.description,
@@ -40,12 +39,13 @@ export default class CardList  {
         obj.urlToImage,
         obj.source.name,
         obj.url,
+        obj.id,
         )
     });
   }
+
   renderPrivateCard(cardArr){
-    this.cardArr = cardArr;
-    this.cardArr.forEach((obj) => {
+    cardArr.forEach((obj) => {
       this.addCard(
         obj.title,
         obj.text,
@@ -53,82 +53,64 @@ export default class CardList  {
         obj.image,
         obj.source,
         obj.link,
+        obj._id,
         obj.keyword,
         'Redrawing', //Ключ для определения какую карточку отрисовывать.
-        obj._id,
         )
     });
   }
-  arrayControl(array){
-    this.array = array;
-    this.currentIndex = 0;
-    this.currentLimit = 0;
-    this.checkingSavedCard(array)
-  }
-  showСards(event) {
-    event.preventDefault();
-    this.currentLimit += 3;
-    for (this.currentIndex; this.currentIndex < this.currentLimit && this.currentIndex <  this.array.length; this.currentIndex++) {
-      this.render([ this.array[this.currentIndex]]);
+
+  //(2) Принимает массив новостей и делает запрос на наш сервер для получения сохраненных статей
+  // Отправляет два массива для сравнения в checkingSavedCard()
+  arrayConverter(newsArray){
+      this.api.getArticles()
+      .then((result) => {
+        if(result.totalResults === 0){
+          console.log('Ничего не найдено')
+        } else{
+          this.checkingSavedCard(result.data, newsArray)
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+    })
     }
-  }
-  refreshCardList(){
-    if (this.container.childNodes.lenght !== 0){
-      localStorage.removeItem('articleKey'); // чистим хранилище от ключей
-      while (this.container.firstChild) {
-        this.container.removeChild(this.container.firstChild)
+  //(3) Прогоняет два полученных массива чтобы найти повторяющиеся карточки
+  // И возвращает переписанный массив новостей который содержит id сохранненых карт
+  checkingSavedCard(arr2, arr1){
+    arr2.forEach(function(arr2Element) {
+      arr1.forEach(function(arr1Element) {
+              if (arr2Element.text === arr1Element.description) {
+                arr1Element.id = arr2Element._id
+              } return 
+          });
+     
+      });
+      this.newArray= arr1 // используем в showСards(event) 
+      this.showСards()
+    }
+    //(1) Первым получает массив newsArray и передает в arrayConverter()
+    arrayControl(newsArray){
+      this.currentIndex = 0;
+      this.currentLimit = 0;
+      this.arrayConverter(newsArray)
+    }
+    showСards() {
+      this.currentLimit += 3;
+      for (this.currentIndex; this.currentIndex < this.currentLimit && this.currentIndex <  this.newArray.length; this.currentIndex++) {
+        this.render([ this.newArray[this.currentIndex]]);
       }
     }
-    return
-  }
-  listener(){
-    this.button.addEventListener('click', this.showСards)
-  }
-// Взять два массива и уже рабоать перебором с нимим
-// Иначе слишком много операций
-  checkingSavedCard(findObj){
-    this.api.getArticles()
-    .then((result) => {
-      if(result.totalResults === 0){
-        console.log('Ничего не найдено')
-      } else{
-        console.log('я спросил')   
-         const a = result.data.forEach(car => {
-          Object.keys(findObj).every(key => {
-            // console.log(car.text,'Я 1 ',findObj,'Я 2 ')
-          if(car.text === findObj){
-            console.log('О такая уже есть')
-            console.log(car.text,'Я 1 ',findObj,'Я 2 ')
-            return true
-          }else {
-            console.log('А этих нету')
-            return false
-          }
-          })
-          console.log(car)
-         })
-      console.log(a)
-        // console.log(firstArr.every((v,i)=>v.description ==  result.data[i].text))
-        if (a == true){
-          console.log('О такая уже есть')
-        } else {
-          console.log('хто я')
+    refreshCardList(){
+      if (this.container.childNodes.lenght !== 0){
+        localStorage.removeItem('articleKey'); // чистим хранилище от ключей
+        while (this.container.firstChild) {
+          this.container.removeChild(this.container.firstChild)
         }
       }
-    })
-  }
-
-  arrayConverter(array, findObj){
-
+      return
     }
-
-   // Когда рендер гонит обьект он вызывает функцию сравнения  
-   // передает значения 2х или больше значений которые прогоняются через модуль 
-  
-  // Присвоить id и покрасить маркер
-
-  // this.firstArr = firstArr;
-
-  // Метод проверки на добавленную карточку.
-  // используем массив проверки и красим флажок проверив на залогиненого пользователя
+    listener(){
+      this.button.addEventListener('click', this.showСards)
+    }
 }

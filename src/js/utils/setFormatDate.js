@@ -1,5 +1,4 @@
 const setFormatDate = (newsDate) => {
-    console.log(newsDate)
     const date = new Date(newsDate);
 
     const options = {
