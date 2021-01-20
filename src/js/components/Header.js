@@ -8,11 +8,18 @@ export default class Header {
     navControl(){
         this.options.navСurtain.classList.toggle('header__nav_open');
         this.options.navButton.classList.toggle('active');
-        // условие при котором надо будет либо красить либо не красить кнопки
+        if(this.options.headerTitle.classList.contains('header-article')){
+            this.colorControl()
+        }
     }
 //Модуль для обработки цвета шапки
     colorControl(){
-
+        this.options.navButton.classList.toggle('button_color-dark')
+        this.options.navButton.classList.toggle('button_color-light')
+        this.options.headerTitle.classList.toggle('header__title_color-dark')
+        this.options.headerTitle.classList.toggle('header__title_color-light')
+        this.options.headerButton.classList.toggle('button_color-dark');
+        this.options.headerButton.classList.toggle('button_color-light');
     }
 //Модуль для обработки кнопок залогиненого пользователя
     headerLogin(name){
@@ -28,7 +35,7 @@ export default class Header {
             this.options.loginButton.classList.add('disabled');
             this.options.navAuthButton.classList.remove('disabled');
             this.options.buttonText.textContent = 'Hacker';
-            window.location.href="../index.html"
+            document.location.href = '../'
             // this.localStorage.removeKey("authorizedUser");
             // this.localStorage.removeKey("key")
             localStorage.clear()

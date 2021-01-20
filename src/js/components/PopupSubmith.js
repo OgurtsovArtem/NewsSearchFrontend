@@ -15,8 +15,9 @@ export default class PopupSubmith {
     this.api.login(email, password)
     .then((result) => {
       if (result === undefined){
-        console.log(result) // Выводить ошибку над кнопкой!
+        this.options.siginLoginErr.classList.remove('disabled')
       } else {
+        this.options.siginLoginErr.classList.add('disabled')
         this.options.loginPopup.classList.add('disabled');
         this.localStorage.saveKey ('key', result.token)
         this.api.getUser(result.token)
@@ -43,8 +44,9 @@ export default class PopupSubmith {
     this.api.registration(email, password, name)
     .then((result) => {
       if (result === undefined){
-        console.log(result) // Выводить ошибку над кнопкой!
+        this.options.siginRegErr.classList.remove('disabled')
       } else {
+        this.options.siginRegErr.classList.add('disabled')
         this.options.registrationPopup.classList.add('disabled');
         this.options.successfulPopup.classList.remove('disabled');
       }
@@ -54,7 +56,3 @@ export default class PopupSubmith {
     })
   }
 }
-
-
-//Отправляем статью и сохраняем ее
-//Удаляем статью

@@ -4,6 +4,7 @@ export default class FormValidator {
     this.formElement = formElement;
     this.formImput = formImput;
     this.popupButton = popupButton;
+    this.listener()
   }
 
   setEventListeners () {

@@ -5,6 +5,8 @@ const HEADER_SETTINGS = {
     saveArticles: document.querySelector('.link-save'),
     loginButton: document.querySelector('.header__button-logout'),
     buttonText: document.querySelector('.header__button-logout-text'),
+    headerTitle: document.querySelector('.header__title'),
+    headerButton: document.querySelector('.header__button-logout'),
   };
   
 export default HEADER_SETTINGS;

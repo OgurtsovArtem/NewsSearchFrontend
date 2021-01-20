@@ -8,12 +8,11 @@ export default class Page {
 
     accessСheck(){
         if (localStorage.authorizedUser !== undefined) {
-          console.log('я нашел топик!')
+          // Сделать проверку если сервер недоступен!
             this.savedCard()
             this.options.keywords.classList.remove('disabled')  
         }else{
-          console.log('Чет я ничего не нашел:(')
-          window.location.href="../index.html"
+          document.location.href = '../'
         }
     }
 
@@ -46,7 +45,7 @@ export default class Page {
         this.options.keynumber.textContent = `${keyword[1]}`;
       } 
     }
-    
+
     savedCard(){
       this.mainApi.getArticles()
       .then((result) => {
