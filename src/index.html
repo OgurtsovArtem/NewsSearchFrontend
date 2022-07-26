@@ -22,12 +22,12 @@
             <a class="link header__link header__link_color-light  header__link_line-active-light" href="#">Главная</a>
           </li>
           <li>
-            <a class="link header__link header__link_color-light" href="./articles.html">Сохраненные статьи</a>
+            <a class="link header__link header__link_color-light link-save disabled" href="./articles.html">Сохраненные статьи</a>
           </li>
         </ul>
         <button type="button" class="button button__presets header__button header__button-login">Авторизоваться</button>
         <button type="button" class="button button_color-light button__presets header__button header__button-logout disabled">
-          <span class="button__text">Грета</span>
+          <span class="button__text header__button-logout-text">User</span>
           <span class="button__icon">
             <span class="button__icon_bracket"></span>
             <span class="button__icon_arrow"></span>
@@ -42,10 +42,10 @@
       <div class="intro__container ">
         <h1 class="intro__title">Что творится в мире?</h1>
         <p class="intro__subtext">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
-        <div class="intro__search-container">
-          <input inputmode='search' type="search" class="intro__search" minlength="2" maxlength="45" aria-label="Search News" placeholder="Введите тему новости" required> 
+        <form class="intro__search-container" name="search" novalidate>
+          <input inputmode='search' type="search" id="search" class="intro__search" minlength="2" maxlength="45" aria-label="Search News" placeholder="Введите тему новости" required> 
           <button  class="button intro__button" >Искать</button>
-        </div>
+        </form>
       </div>
     </section>
 
@@ -63,7 +63,7 @@
       <p class="not-found__text">К сожалению по вашему запросу ничего не найдено.</p>
     </section>
 
-    <section class="place-list width-control">
+    <section class="place-list width-control disabled">
       <h2 class="place-list__title">Результаты поиска</h2>
       <div class="place-list__container">
         <div class="place-card">
@@ -73,24 +73,6 @@
           <span class="place-card__date">2 августа, 2019</span>
           <h3 class="place-card__title">Национальное достояние – парки</h3>
           <p class="place-card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-          <a href="#" class="place-card__link link">Лента.ру</a>
-        </div>
-        <div class="place-card">
-          <button class="place-card__flag"></button>
-          <p class="place-card__prompt">Войдите, чтобы сохранять статьи</p>
-          <img src="<%=require('./images/image_06.png').default%>" alt="card-image" class="place-card__image">
-          <span class="place-card__date">2 августа, 2019</span>
-          <h3 class="place-card__title">Национальное достояние – парки</h3>
-          <p class="place-card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-          <a href="#" class="place-card__link link">Лента.ру</a>
-        </div>
-        <div class="place-card">
-          <button class="place-card__flag place-card__flag_active"></button>
-          <p class="place-card__prompt">Войдите, чтобы сохранять статьи</p>
-          <img src="<%=require('./images/image_06.png').default%>" alt="card-image" class="place-card__image">
-          <span class="place-card__date">2 августа, 2019</span>
-          <h3 class="place-card__title">Национальное достояние – парки</h3>
-          <p class="place-card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система нациВ 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система нациВ 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система нациВ 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система нациВ 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система нациВ 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
           <a href="#" class="place-card__link link">Лента.ру</a>
         </div>
       </div>
@@ -114,17 +96,18 @@
     <section class="popup popup-login disabled">
       <div class="popup__content">
         <img src="<%=require('./images/icons/close.svg').default%>" alt="close-image" class="popup__close">
-        <form class="popup__form" name="login">
+        <form class="popup__form" name="login"  novalidate>
           <fieldset>
             <legend class="popup__title">Вход</legend>
             <label for="email-login" class="popup__label">Email</label>
-            <input  type="email" id='email-login' name="Email" class="popup__input popup__input_type_name" placeholder="Введите почту" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-            <div class="error popup__error" id ='email-error-login' ></div>
+            <input  type="email" id='email-login' name="email" class="popup__input popup__input_type_name" placeholder="Введите почту" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+            <div class="error popup__error" id ='email-login-error' ></div>
             <label for="password-login" class="popup__label">Пароль</label>
-            <input type="password" name="password" id='password-login' class="popup__input popup__input_type_link-url" placeholder="Введите пароль" minlength="8" required>
-            <div class="error popup__error" id ='password-error-login'></div>
-            <button type="button" class="button button__presets popup__button button__login" >Войти</button>
-            <p class="popup__another-link">или&nbsp;<button type="button" class="button popup__button-another-form">Зарегистрироваться</button></p>
+            <input type="password" name="password" id='password-login' class="popup__input popup__input_type_link-url" placeholder="Введите пароль" " required>
+            <div class="error popup__error" id ='password-login-error'></div>
+            <button type="submit" class="button button__presets popup__button button__login" >Войти</button>
+            <div class="error popup__error disabled" id ='login-signin-error'  style="justify-content: center;">Ошибка входа</div>
+            <p class="popup__another-link">или&nbsp;<button type="button" class="button popup__button-another-form button-registration">Зарегистрироваться</button></p>
           </fieldset>
         </form>
       </div>
@@ -133,20 +116,21 @@
     <section class="popup popup-registration disabled">
       <div class="popup__content">
         <img src="<%=require('./images/icons/close.svg').default%>" alt="close-image" class="popup__close">
-        <form class="popup__form" name="registration">
+        <form class="popup__form" name="registration" novalidate>
           <fieldset>
             <legend class="popup__title">Регистрация</legend>
             <label for="email-registration" class="popup__label">Email</label>
-            <input  type="email" id='email-registration' name="Email" class="popup__input popup__input_type_name" placeholder="Введите почту" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-            <div class="error popup__error" id ='email-error-registration' ></div>
+            <input  type="email" id='email-registration' name="email" class="popup__input popup__input_type_name" placeholder="Введите почту" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+            <div class="error popup__error" id ='email-registration-error' ></div>
             <label for="password-registration" class="popup__label">Пароль</label>
             <input type="password" name="password" id='password-registration' class="popup__input popup__input_type_link-url" placeholder="Введите пароль" minlength="8" required>
-            <div class="error popup__error" id ='password-error-registration'></div>
+            <div class="error popup__error" id ='password-registration-error'></div>
             <label for="name-registration" class="popup__label">Имя</label>
-            <input type="text" name="name" id='name-registration' class="popup__input popup__input_type_link-url" placeholder="Введите своё имя" maxlength="30" required>
-            <div class="error popup__error" id ='name-error-registration'></div>
-            <button type="button" class="button button__presets popup__button button__registration" >Зарегистрироваться</button>
-            <div class="popup__another-link">или&nbsp;<button type="button" class="button popup__button-another-form">Войти</button></div>
+            <input  type="text" name="name" id='name-registration' class="popup__input popup__input_type_link-url" placeholder="Введите своё имя"minlength="2" maxlength="30" required>
+            <div class="error popup__error" id ='name-registration-error'></div>
+            <button type="submit" class="button button__presets popup__button button__registration" >Зарегистрироваться</button>
+            <div class="error popup__error disabled" id ='registration-signin-error' style="justify-content: center;">Ошибка регистрации</div>
+            <div class="popup__another-link">или&nbsp;<button type="button" class="button popup__button-another-form button-login-one">Войти</button></div>
           </fieldset>
         </form>
       </div>
@@ -158,7 +142,7 @@
         <form class="popup__form" name="successful-registration">
           <fieldset>
             <legend class="popup__title">Пользователь успешно зарегистрирован!</legend>
-            <button type="button" class="button popup__button-another-form">Войти</button>
+            <button type="button" class="button popup__button-another-form button-login-two">Войти</button>
           </fieldset>
         </form>
       </div>

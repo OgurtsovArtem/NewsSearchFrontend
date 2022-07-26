@@ -5,6 +5,11 @@
   font-size: 26px;
   line-height: 30px;
   margin: 12px 24px 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 
@@ -12,5 +17,6 @@
   .place-card__title{
     font-size: 22px;
     line-height: 24px;
+    -webkit-line-clamp: 2;
   }
 }
